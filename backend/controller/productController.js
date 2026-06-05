@@ -24,7 +24,18 @@ const getProductById = async (req, res) => {
     }
 };
 
+const getCategories = async (req, res) => {
+    try {
+        const response = await pool.query('SELECT * FROM categories');
+        res.json(response.rows);
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+        res.status(500).json({error: 'Internal Server Error'})
+    }
+}
+
 module.exports = {
     getAllProducts,
-    getProductById
+    getProductById,
+    getCategories,
 };
