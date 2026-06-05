@@ -1,8 +1,20 @@
 const pool = require('../config/db');
 
-const getAllProducts = async (req, res) => {
+const getProducts = async (req, res) => {
+
+    const { category } = req.query;
+
+    let allProducts = "SELECT products.id, title, description, price, image_url FROM products";
+
+    const queryParams = []
+
+    if(category) {
+        allProducts += " INNER JOIN categories c ON products.category_id = c.id WHERE c.name = $1";
+        queryParams.push(category);
+    };
+
     try {
-        const response = await pool.query('SELECT * FROM products');
+        const response = await pool.query(allProducts, queryParams);
         res.json(response.rows);
     } catch (error) {
         console.error('Error fetching products:', error);
@@ -35,7 +47,7 @@ const getCategories = async (req, res) => {
 }
 
 module.exports = {
-    getAllProducts,
+    getProducts,
     getProductById,
     getCategories,
 };
