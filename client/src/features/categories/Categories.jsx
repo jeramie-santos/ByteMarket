@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { fetchCategories } from "./categoriesSlice";
+import { changeCategory, fetchCategories } from "./categoriesSlice";
 
-const Categories = ({ selectedCategory, setSelectedCategory }) => {
+const Categories = () => {
   const dispatch = useDispatch();
-  const { data: categories } = useSelector((state) => state.categories); 
+  const { data: categories, activeCategory } = useSelector((state) => state.categories); 
 
   useEffect(() => {
       dispatch(fetchCategories());
@@ -12,7 +12,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => {
     
   return (
     <div>
-        <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+        <select value={activeCategory} onChange={(e) => dispatch(changeCategory(e.target.value))}>
             <option value="All">All</option>
             {categories.map(category => 
                 <option key={category.id} value={category.name}>{category.name}</option>

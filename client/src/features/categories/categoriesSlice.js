@@ -20,8 +20,13 @@ const categoriesSlice = createSlice({
         data: [],
         loading: false,
         error: null,
+        activeCategory: "All"
     },
-    reducers: {},
+    reducers: {
+        changeCategory: (state, action) => {
+            state.activeCategory = action.payload;
+        }
+    },
 
     extraReducers: (builder) => {
         builder
@@ -39,5 +44,6 @@ const categoriesSlice = createSlice({
     }
 });
 
+export const { changeCategory } = categoriesSlice.actions;
 export default categoriesSlice.reducer;
 
