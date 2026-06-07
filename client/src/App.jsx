@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { Route, Routes } from "react-router-dom"
+
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Categories from "./features/categories/Categories"
 import ProductList from "./features/products/ProductList"
+import ProductDetail from "./features/products/ProductDetail"
 
 const App = () => {
   return (
@@ -11,9 +13,18 @@ const App = () => {
         <Navbar />
         <Hero />
       </div>
+
       <main className="min-h-screen border-2 border-green-400 flex flex-col p-4 gap-4">
-        <Categories />
-        <ProductList />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Categories />
+              <ProductList />
+            </>
+          }/>
+          <Route path="/product/:id" element={<ProductDetail />}/>
+        </Routes>  
+      
       </main>
     </div>
   )
