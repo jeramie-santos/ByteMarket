@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "./productsSlice";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = ({selectedCategory}) => {
 
   const dispatch = useDispatch();
   const { data: products, loading } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch])
+    dispatch(fetchProducts(selectedCategory));
+  }, [selectedCategory])
 
   if (loading) return <p>Loading products...</p>
 
