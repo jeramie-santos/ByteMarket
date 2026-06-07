@@ -10,7 +10,7 @@ const App = () => {
         <Navbar />
         <Hero />
       </div>
-      <main className="min-h-screen border-2 border-green-400">
+      <main className="min-h-screen border-2 border-green-400 flex flex-col p-4 gap-4">
         <Categories />
         <ProductList />
       </main>

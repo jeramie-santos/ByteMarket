@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const API_CATEGORY = import.meta.env.VITE_API_CATEGORY_URL;
 
-export const fetchCategory = createAsyncThunk('category/fetchCategory',
+export const fetchCategories = createAsyncThunk('category/fetchCategories',
     async(_, {rejectWithValue}) => {
         try {
             const response = await fetch(API_CATEGORY);
@@ -25,14 +25,14 @@ const categoriesSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
-            .addCase(fetchCategory.pending, (state) => {
+            .addCase(fetchCategories.pending, (state) => {
                 state.loading = true;
             })
-            .addCase(fetchCategory.fulfilled, (state, action) => {
+            .addCase(fetchCategories.fulfilled, (state, action) => {
                 state.loading = false;
                 state.data = action.payload;
             })
-            .addCase(fetchCategory.rejected, (state, action) => {
+            .addCase(fetchCategories.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
