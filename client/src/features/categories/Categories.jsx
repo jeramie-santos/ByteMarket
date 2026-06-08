@@ -11,12 +11,14 @@ const Categories = () => {
   }, [dispatch])   
     
   return (
-    <div>
-        <select value={activeCategory} onChange={(e) => dispatch(changeCategory(e.target.value))}>
-            <option value="All">All</option>
-            {categories.map(category => 
-                <option key={category.id} value={category.name}>{category.name}</option>
-            )}
+    <div className="flex items-center gap-2">
+        <label htmlFor="select-category">Choose a category: </label>
+        <select id="select-category" value={activeCategory} onChange={(e) => dispatch(changeCategory(e.target.value))}
+            className="border border-(--color-border-subtle) p-2">
+                <option value="All">All</option>
+                {categories.map(category => 
+                    <option key={category.id} value={category.name}>{category.name}</option>
+                )}
         </select>
     </div>
   )

@@ -8,10 +8,11 @@ const Navbar = () => {
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <header className="flex justify-between border-2 py-8 px-4">
+    <header className="py-8 px-4 flex justify-between bg-(--color-surface) z-10 shadow-lg">
         <div>
           <Link to="/">
-            <strong>ByteMarket</strong>
+            <span className="text-(--color-primary) text-2xl font-bold">Byte</span>
+            <span className="text-(--color-secondary) text-2xl font-bold">Market</span>
           </Link>
         </div>
         <div className="flex gap-2">

@@ -13,11 +13,11 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <Link to={`/product/${id}`} className="border p-2">
+    <Link to={`/product/${id}`} className="flex flex-col gap-2 bg-(--color-surface) p-4 border border-(--color-border-subtle) rounded-2xl shadow-xl">
       <img src={image_url} alt={title} className="w-full h-48 object-cover mb-2"/>
-      <p>{title}</p>
-      <p>{price}</p>
-      <button onClick={handleAddToCart}>
+      <p className="text-2xl font-semibold text-(--color-text-main)">{title}</p>
+      <p className="text-2xl text-(--color-text-muted)">${price}</p>
+      <button onClick={handleAddToCart} className="bg-(--color-primary) py-2 text-(--color-on-primary) rounded-md hover:bg-(--color-primary-hover) hover:cursor-pointer">
         Add to Cart
       </button>
     </Link>

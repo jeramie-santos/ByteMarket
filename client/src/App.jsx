@@ -9,7 +9,7 @@ import CartView from "./features/cart/CartView"
 
 const App = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-(--color-canvas)">
       <div className="flex flex-col flex-1 min-h-screen">
         <Navbar />
         <Hero />
