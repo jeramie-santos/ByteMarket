@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import Categories from "./features/categories/Categories"
 import ProductList from "./features/products/ProductList"
 import ProductDetail from "./features/products/ProductDetail"
+import CartView from "./features/cart/CartView"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             </>
           }/>
           <Route path="/product/:id" element={<ProductDetail />}/>
+          <Route path="/cart" element={<CartView />}/>
         </Routes>  
       
       </main>
