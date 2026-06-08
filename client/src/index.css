@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Core brand colors (Red Accents) */
-  --color-primary: #dc2626;       /* Vibrant Action Red (Tailwind Red-600) */
-  --color-primary-hover: #b91c1c; /* Darker Red for button hovers (Tailwind Red-700) */
+  --color-primary: #dc2626;       
+  --color-primary-hover: #b91c1c; 
   --color-on-primary: #ffffff;
-  --color-secondary: #1e1b4b;     /* Deep Ink/Midnight - keeps red from looking cheap */
+  --color-secondary: #1e1b4b;     
 
-  /* Neutral surfaces (Light Theme - White Base) */
-  --color-canvas: #ffffff;         /* Pure White background */
-  --color-surface: #f8fafc;        /* Soft Off-White for cards/sections (Tailwind Slate-50) */
-  --color-surface-hover: #f1f5f9;  /* Light gray for hovers (Tailwind Slate-100) */
+  --color-canvas: #ffffff;         
+  --color-surface: #f8fafc;        
+  --color-surface-hover: #f1f5f9;  
 
-  /* Text & Borders (Black Base) */
-  --color-text-main: #0f172a;     /* Deep Charcoal Black for ultimate readability */
-  --color-text-muted: #475569;    /* Muted Slate Gray for subtitles (Tailwind Slate-600) */
-  --color-border-subtle: #e2e8f0; /* Crisp divider lines (Tailwind Slate-200) */
+  
+  --color-text-main: #0f172a;     
+  --color-text-muted: #475569;    
+  --color-border-subtle: #e2e8f0; 
 
 
 }

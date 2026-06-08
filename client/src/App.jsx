@@ -15,7 +15,7 @@ const App = () => {
         <Hero />
       </div>
 
-      <main className="min-h-screen border-2 border-green-400 flex flex-col p-4 gap-4">
+      <main className="min-h-screen flex flex-col p-4 gap-4">
         <Routes>
           <Route path="/" element={
             <>
