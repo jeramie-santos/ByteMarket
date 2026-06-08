@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom"
 import { fetchProductById } from "./productsSlice";
+import { addToCart } from "../cart/cartSlice";
 
 const ProductDetail = () => {
 
@@ -32,6 +33,9 @@ const ProductDetail = () => {
             <p>${price}</p>
             <p>{description || "No Description."}</p>
         </div>
+        <button onClick={() => dispatch(addToCart(selectedProduct))}>
+          Add to  Cart
+        </button>
       </div>
     </div>
   )
