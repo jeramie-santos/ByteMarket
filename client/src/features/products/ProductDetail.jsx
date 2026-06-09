@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom"
 import { fetchProductById } from "./productsSlice";
 import { addToCart } from "../cart/cartSlice";
+import { triggerToast } from "../toasts/toastSlice";
 
 const ProductDetail = () => {
 
@@ -19,9 +20,14 @@ const ProductDetail = () => {
   if (loading) return <p className="text-center text-2xl">Loading item details...</p>;
   if (error) return <p className="text-center text-2xl">Error loading product: {error}</p>
   
-  const { title, price, image_url, description } = selectedProduct;
+  const { title, price, image_url, description } = selectedProduct || {};
 
   const isProductEmpty = !selectedProduct || !selectedProduct.id;
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(selectedProduct));
+    dispatch(triggerToast(`${title || "Item"} added to shopping cart!`))
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -35,7 +41,7 @@ const ProductDetail = () => {
             <p className="text-2xl text-(--color-text-muted)">${price || "0.00"}</p>
             <p>{description || "No Description."}</p>
         </div>
-        <button onClick={() => dispatch(addToCart(selectedProduct))}
+        <button onClick={handleAddToCart}
           className="bg-(--color-primary) py-4 text-(--color-on-primary) rounded-md hover:bg-(--color-primary-hover) hover:cursor-pointer font-semibold"
           disabled={isProductEmpty}
           >

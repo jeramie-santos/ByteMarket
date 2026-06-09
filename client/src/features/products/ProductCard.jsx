@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../cart/cartSlice";
+import { triggerToast } from "../toasts/toastSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = (e) => {
     e.preventDefault();
     dispatch(addToCart(product));
+    dispatch(triggerToast(`${title || "Item"} added to shopping cart!`))
   }
 
   return (

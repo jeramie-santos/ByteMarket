@@ -6,12 +6,14 @@ import Categories from "./features/categories/Categories"
 import ProductList from "./features/products/ProductList"
 import ProductDetail from "./features/products/ProductDetail"
 import CartView from "./features/cart/CartView"
+import ToastContainer from "./features/toasts/ToastContainer"
 
 const App = () => {
   return (
     <div className="flex flex-col w-full bg-(--color-canvas)">
       <div className="flex flex-col flex-1 min-h-screen">
         <Navbar />
+        <ToastContainer />
         <Hero />
       </div>
 
