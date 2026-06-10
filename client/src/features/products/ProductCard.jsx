@@ -16,9 +16,9 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={`/product/${id}`} className="flex flex-col gap-2 bg-(--color-surface) p-4 border border-(--color-border-subtle) rounded-xl shadow-xl">
-      <img src={image_url} alt={title} className="w-full h-48 object-cover mb-2"/>
-      <p className="text-2xl font-semibold text-(--color-text-main)">{title}</p>
-      <p className="text-2xl text-(--color-text-muted)">${price}</p>
+      <img src={image_url} alt={title} className="w-full h-48 object-contain mb-2"/>
+      <p className="text-lg font-semibold text-(--color-text-main)">{title}</p>
+      <p className="text-xl font-bold text-(--color-text-muted)">${price}</p>
       <button onClick={handleAddToCart} className="bg-(--color-primary) py-2 text-(--color-on-primary) rounded-xl hover:bg-(--color-primary-hover) hover:cursor-pointer font-bold">
         Add to Cart
       </button>

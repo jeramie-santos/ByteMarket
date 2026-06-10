@@ -13,7 +13,7 @@ const App = () => {
     <div className="flex flex-col w-full min-h-screen bg-(--color-canvas)">
       <Navbar />
       <ToastContainer />
-      <main className="flex-1 flex flex-col p-4 gap-4">
+      <main className="flex-1 flex flex-col p-4 gap-4 max-w-7xl self-center">
         <Routes>
           <Route path="/" element={
             <>

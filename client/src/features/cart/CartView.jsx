@@ -25,12 +25,12 @@ const CartView = () => {
 
   return (
     //parent container
-    <section className="flex flex-col gap-4 max-w-7xl self-center">
+    <section className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">Your Cart</h2>
         
         
-        <div className="flex flex-col gap-4 md:flex-row">
-            <div className="flex flex-col gap-4 md:flex-1">
+        <div className="flex flex-col gap-4 lg:flex-row">
+            <div className="flex flex-col gap-4 md:flex-2">
                 
          
                 <div className="flex flex-col bg-(--color-surface) divide-y divide-gray-300 border border-(--color-border-subtle) p-4 rounded-xl shadow-2xl">
@@ -42,7 +42,7 @@ const CartView = () => {
                                 <img src={image_url} alt={title} className="w-20 aspect-square object-cover shrink-0"/>
                                 <div className="flex-1 flex flex-col gap-1 lg:gap-6 lg:flex-row lg:items-center">
                                     <div>
-                                        <h3 className="font-bold">{title}</h3>
+                                        <h3 className="font-bold lg:text-lg">{title}</h3>
                                         <p className="text-(--color-text-muted)">${price}</p>
                                     </div>
                                     <div className="flex gap-2 items-center">
@@ -53,7 +53,7 @@ const CartView = () => {
                                         </div>
                                         <button className="text-sm text-(--color-primary)" onClick={() => dispatch(removeFromCart(id))}>Remove</button>
                                     </div>
-                                    <p className="font-semibold">Total: ${subTotal}</p>
+                                    <p className="font-semibold shrink-0">Total: ${subTotal}</p>
                                 </div>
                             </div>
                         )

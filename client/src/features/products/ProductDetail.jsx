@@ -30,7 +30,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4 max-w-7xl self-center">
+    <div className="flex flex-col gap-4">
       <button onClick={() => navigate(-1)} className="text-(--color-text-muted) self-start py-2 px-4 rounded-md">&larr; Back to Shop</button>
       <div className="flex flex-col bg-(--color-surface) border border-(--color-border-subtle) gap-4 p-4 rounded-xl shadow-2xl md:flex-row md:p-5 lg:p-6">
         <div className="flex-1 w-full flex items-center justify-center bg-gray-200 rounded-lg p-4">

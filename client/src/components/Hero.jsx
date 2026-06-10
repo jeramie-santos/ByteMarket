@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex-1 flex flex-col-reverse p-4 gap-8 max-w-7xl items-center justify-center md:flex-row self-center lg:gap-20">
+    <section className="min-h-[80vh] flex-1 flex flex-col-reverse p-4 gap-8 items-center justify-center md:flex-row self-center lg:gap-20">
         
         <div className="flex flex-col gap-6 justify-center">
           <span className="text-sm font-bold tracking-widest text-(--color-primary) lg:text-base">{heroData.tagline}</span>
