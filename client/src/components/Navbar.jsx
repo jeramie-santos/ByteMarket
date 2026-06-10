@@ -10,7 +10,7 @@ const Navbar = () => {
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <header className="sticky top-0 z-50 py-8 px-4 flex justify-between bg-(--color-surface) shadow-lg border-2 lg:px-40 border-black md:border-green-300 lg:border-blue-500">
+    <header className="sticky top-0 z-50 py-8 px-4 flex justify-between bg-(--color-surface) shadow-lg lg:px-40">
         <div>
           <Link to="/">
             <span className="text-(--color-primary) text-2xl font-extrabold tracking-tight">Byte</span>

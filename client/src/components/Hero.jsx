@@ -19,11 +19,6 @@ const Hero = () => {
             <h1 className="text-4xl text-(--color-secondary) font-extrabold lg:text-6xl">{heroData.title}</h1>
             <p className="text-base text-(--color-text-muted) leading-relaxed lg:text-lg">{heroData.subtitle}</p>
           </div>
-          
-          <div className="flex gap-4">
-            <button className="bg-(--color-primary) text-(--color-on-primary) text-sm py-2 px-4 rounded-xl font-bold md:text-base">{heroData.primaryButtonText}</button>
-            <button className="border-2 border-(--color-border-subtle) text-(--color-secondary) text-sm py-2 px-4 rounded-xl font-bold md:text-base">{heroData.secondaryButtonText}</button>
-          </div>
         </div>
         
         <div className="w-full flex justify-center">
