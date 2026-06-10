@@ -14,17 +14,21 @@ export const fetchCategories = createAsyncThunk('category/fetchCategories',
     }
 )
 
-const categoriesSlice = createSlice({
+const filterSlice = createSlice({
     name: "category",
     initialState: {
         data: [],
         loading: false,
         error: null,
-        activeCategory: "All"
+        activeCategory: "All",
+        activeSort: "default",
     },
     reducers: {
         changeCategory: (state, action) => {
             state.activeCategory = action.payload;
+        },
+        changeSort: (state, action) => {
+            state.activeSort = action.payload;
         }
     },
 
@@ -44,6 +48,6 @@ const categoriesSlice = createSlice({
     }
 });
 
-export const { changeCategory } = categoriesSlice.actions;
-export default categoriesSlice.reducer;
+export const { changeCategory, changeSort } = filterSlice.actions;
+export default filterSlice.reducer;
 

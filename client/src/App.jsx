@@ -2,11 +2,11 @@ import { Route, Routes } from "react-router-dom"
 
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-import Categories from "./features/categories/Categories"
 import ProductList from "./features/products/ProductList"
 import ProductDetail from "./features/products/ProductDetail"
 import CartView from "./features/cart/CartView"
 import ToastContainer from "./features/toasts/ToastContainer"
+import Filter from "./features/filters/Filter"
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" element={
             <>
               <Hero />
-              <Categories />
+              <Filter />
               <ProductList />
             </>
           }/>

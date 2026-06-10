@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { changeCategory, fetchCategories } from "./categoriesSlice";
+import { changeCategory, fetchCategories } from "./filterSlice";
 
 const Categories = () => {
   const dispatch = useDispatch();
-  const { data: categories, activeCategory } = useSelector((state) => state.categories); 
+  const { data: categories, activeCategory } = useSelector((state) => state.filters); 
 
   useEffect(() => {
       dispatch(fetchCategories());
