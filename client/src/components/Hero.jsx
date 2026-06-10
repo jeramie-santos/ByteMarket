@@ -10,18 +10,26 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex-1 flex flex-col-reverse p-4 gap-8">
-        <div className="flex flex-col gap-2">
-          <span className="text-4xl text-(--color-primary) font-bold ">{heroData.tagline}</span>
-          <h1 className="text-2xl text-(--color-secondary) font-semibold">{heroData.title}</h1>
-          <p className="text-(--color-text-muted)">{heroData.subtitle}</p>
+    <section className="min-h-[80vh] flex-1 flex flex-col-reverse p-4 gap-8 max-w-7xl items-center justify-center md:flex-row self-center lg:gap-20">
+        
+        <div className="flex flex-col gap-6 justify-center">
+          <span className="text-sm font-bold tracking-widest text-(--color-primary) lg:text-base">{heroData.tagline}</span>
+          
+          <div className="flex flex-col gap-2 lg:gap-3">
+            <h1 className="text-4xl text-(--color-secondary) font-extrabold lg:text-6xl">{heroData.title}</h1>
+            <p className="text-base text-(--color-text-muted) leading-relaxed lg:text-lg">{heroData.subtitle}</p>
+          </div>
+          
           <div className="flex gap-4">
-            <button className="bg-(--color-primary) text-(--color-on-primary) py-1 px-2 rounded-md font-semibold">{heroData.primaryButtonText}</button>
-            <button className="bg-(--color-primary) text-(--color-on-primary) py-1 px-2 rounded-md font-semibold">{heroData.secondaryButtonText}</button>
+            <button className="bg-(--color-primary) text-(--color-on-primary) text-sm py-2 px-4 rounded-xl font-bold md:text-base">{heroData.primaryButtonText}</button>
+            <button className="border-2 border-(--color-border-subtle) text-(--color-secondary) text-sm py-2 px-4 rounded-xl font-bold md:text-base">{heroData.secondaryButtonText}</button>
           </div>
         </div>
-        <div>
-          <img src={heroData.imageUrl} alt={heroData.title} />
+        
+        <div className="w-full flex justify-center">
+              <img src={heroData.imageUrl} alt={heroData.title} 
+                className="w-full aspect-square object-cover rounded-3xl border border-white/10 shadow-2xl shadow-black/10 hover:scale-[1.01] transition-duration-500"
+              />
         </div>
     </section>
   )

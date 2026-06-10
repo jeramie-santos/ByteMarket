@@ -10,17 +10,14 @@ import ToastContainer from "./features/toasts/ToastContainer"
 
 const App = () => {
   return (
-    <div className="flex flex-col w-full bg-(--color-canvas)">
-      <div className="flex flex-col flex-1 min-h-screen">
-        <Navbar />
-        <ToastContainer />
-        <Hero />
-      </div>
-
-      <main className="min-h-screen flex flex-col p-4 gap-4">
+    <div className="flex flex-col w-full min-h-screen bg-(--color-canvas)">
+      <Navbar />
+      <ToastContainer />
+      <main className="flex-1 flex flex-col p-4 gap-4">
         <Routes>
           <Route path="/" element={
             <>
+              <Hero />
               <Categories />
               <ProductList />
             </>
