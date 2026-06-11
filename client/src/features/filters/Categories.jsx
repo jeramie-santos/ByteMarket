@@ -14,7 +14,7 @@ const Categories = () => {
     <div className="flex items-center gap-2">
         <label htmlFor="select-category">Choose a category: </label>
         <select id="select-category" value={activeCategory} onChange={(e) => dispatch(changeCategory(e.target.value))}
-            className="border border-(--color-border-subtle) p-2">
+            className="border border-(--color-border-subtle) p-2 hover:cursor-pointer bg-(--color-surface)">
                 <option value="All">All</option>
                 {categories.map(category => 
                     <option key={category.id} value={category.name}>{category.name}</option>

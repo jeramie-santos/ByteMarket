@@ -31,7 +31,7 @@ const ProductDetail = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <button onClick={() => navigate(-1)} className="text-(--color-text-muted) self-start py-2 px-4 rounded-md">&larr; Back to Shop</button>
+      <button onClick={() => navigate(-1)} className="text-(--color-text-muted) self-start py-2 px-4 rounded-md hover:cursor-pointer">&larr; Back to Shop</button>
       <div className="flex flex-col bg-(--color-surface) border border-(--color-border-subtle) gap-4 p-4 rounded-xl shadow-2xl md:flex-row md:p-5 lg:p-6">
         <div className="flex-1 w-full flex items-center justify-center bg-gray-200 rounded-lg p-4">
             <img src={image_url} alt={title} className="max-w-full max-h-87 object-contain"/>
@@ -45,7 +45,7 @@ const ProductDetail = () => {
             <div className="flex-1 flex flex-col gap-4">
               <p>{description || "No Description."}</p>
               <button onClick={handleAddToCart}
-                className="mt-auto bg-(--color-primary) py-4 text-(--color-on-primary) border rounded-xl hover:bg-(--color-primary-hover) hover:cursor-pointer font-semibold"
+                className="mt-auto bg-(--color-primary) py-4 text-(--color-on-primary) border border-(--color-primary) rounded-xl hover:bg-(--color-primary-hover) hover:cursor-pointer font-semibold"
                 disabled={isProductEmpty}
                 >
                 { isProductEmpty ? "Product Unavailable" : "Add to  Cart"}

@@ -15,23 +15,20 @@ const CartView = () => {
 
   if (items.length === 0) {
     return (
-        <div className="flex flex-col justify-center items-center gap-4">
-            <h2 className="text-2xl font-semibold text-(--color-text-muted)">Your Shopping Cart is empty.</h2>
-            <Link to="/" className="bg-(--color-secondary) text-(--color-on-primary) py-2 px-4 rounded-md">Go Shopping</Link>
+        <div className="flex-1 flex flex-col justify-center items-center gap-4">
+            <h2 className="text-2xl font-semibold text-(--color-text-main)">Your Shopping Cart is empty.</h2>
+            <Link to="/" className="bg-(--color-secondary) text-(--color-on-primary) py-2 px-4 rounded-md hover:bg-(--color-secondary-hover)">Go Shopping</Link>
         </div>
     )
   }
   
 
   return (
-    //parent container
     <section className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">Your Cart</h2>
-        
-        
+    
         <div className="flex flex-col gap-4 lg:flex-row">
-            <div className="flex flex-col gap-4 md:flex-2">
-                
+            <div className="flex flex-col gap-4 md:flex-2">            
          
                 <div className="flex flex-col bg-(--color-surface) divide-y divide-gray-300 border border-(--color-border-subtle) p-4 rounded-xl shadow-2xl">
                     {items.map(item => {
@@ -47,11 +44,11 @@ const CartView = () => {
                                     </div>
                                     <div className="flex gap-2 items-center">
                                         <div className="flex items-center border border-(--color-border-subtle) rounded-md gap-4 px-4">
-                                            <button onClick={() => dispatch(updateQuantity({ id, amount: item.quantity - 1}))} className="py-1">-</button>
+                                            <button onClick={() => dispatch(updateQuantity({ id, amount: item.quantity - 1}))} className="py-1 hover:cursor-pointer">-</button>
                                             <span className="font-medium">{item.quantity}</span>
-                                            <button onClick={() => dispatch(updateQuantity({ id, amount: item.quantity + 1}))} className="py-1">+</button>
+                                            <button onClick={() => dispatch(updateQuantity({ id, amount: item.quantity + 1}))} className="py-1 hover:cursor-pointer">+</button>
                                         </div>
-                                        <button className="text-sm text-(--color-primary)" onClick={() => dispatch(removeFromCart(id))}>Remove</button>
+                                        <button className="text-sm text-(--color-primary) hover:cursor-pointer" onClick={() => dispatch(removeFromCart(id))}>Remove</button>
                                     </div>
                                     <p className="font-semibold shrink-0">Total: ${subTotal}</p>
                                 </div>
@@ -59,12 +56,11 @@ const CartView = () => {
                         )
                     })}
                 </div>
-                <button onClick={() => dispatch(clearCart())} className="bg-(--color-secondary) border text-(--color-on-primary) py-2 rounded-xl shadow-lg">
+                <button onClick={() => dispatch(clearCart())} className="bg-(--color-secondary) border border-(--color-secondary) text-(--color-on-primary) py-2 rounded-xl shadow-lg hover:cursor-pointer hover:bg-(--color-secondary-hover)">
                     Clear Cart
                 </button>
             </div>
 
-           
             <aside className="flex flex-col gap-4 bg-(--color-surface) border border-(--color-border-subtle) p-4 rounded-xl shadow-2xl md:flex-1 h-fit">
                 <h2 className="text-2xl text-center font-bold">Order Summary</h2>
                 <hr />
@@ -79,7 +75,7 @@ const CartView = () => {
                     <span>Total Amount: </span>
                     <span>${grandTotal.toFixed(2)}</span>
                 </div>
-                <button className="bg-(--color-primary) text-(--color-on-primary) py-2 border rounded-xl">Proceed to Checkout</button>
+                <button className="bg-(--color-primary) text-(--color-on-primary) py-2 border border-(--color-primary) rounded-xl hover:cursor-pointer hover:bg-(--color-primary-hover)">Proceed to Checkout</button>
             </aside>
         </div>
     </section>
