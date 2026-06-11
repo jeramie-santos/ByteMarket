@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { updateQuantity, removeFromCart, clearCart } from "./cartSlice";
 import { Link } from "react-router-dom";
+import { triggerToast } from "../toasts/toastSlice";
 
 const CartView = () => {
   
@@ -12,6 +13,11 @@ const CartView = () => {
     const itemPrice = Number(item.product.price) || 0;
     return total + itemPrice * item.quantity;
   }, 0);
+
+  const handleCheckoutToast = () => {
+    dispatch(triggerToast("Order simulated successfully! Thanks for trying ByteMarket."))
+    dispatch(clearCart());
+  }
 
   if (items.length === 0) {
     return (
@@ -75,7 +81,8 @@ const CartView = () => {
                     <span>Total Amount: </span>
                     <span>${grandTotal.toFixed(2)}</span>
                 </div>
-                <button className="bg-(--color-primary) text-(--color-on-primary) py-2 border border-(--color-primary) rounded-xl hover:cursor-pointer hover:bg-(--color-primary-hover)">Proceed to Checkout</button>
+                <button className="bg-(--color-primary) text-(--color-on-primary) py-2 border border-(--color-primary) rounded-xl hover:cursor-pointer hover:bg-(--color-primary-hover)"
+                    onClick={() => handleCheckoutToast()}>Proceed to Checkout</button>
             </aside>
         </div>
     </section>

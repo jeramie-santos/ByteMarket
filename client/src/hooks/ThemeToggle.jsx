@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { toggleTheme } from "../features/theme/themeSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const ThemeToggle = () => {
   const dispatch = useDispatch();
@@ -8,7 +10,7 @@ const ThemeToggle = () => {
 
   return (
     <button onClick={() => dispatch(toggleTheme())}>
-        {theme === "light" ? "🌙" : "☀️"}
+        <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} className="hover:cursor-pointer"/>
     </button>
   )
 }

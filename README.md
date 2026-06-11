@@ -1,14 +1,24 @@
-# ByeMarktet
+# ByteMarktet
 
-This is a personal project and not an actual e-commerce. It is build using PERN Stack (PostgreSQL, Express, React + Tailwind and Node.js).
+This is a personal project and not an actual e-commerce store. It is built using PERN Stack (PostgreSQL, Express, React + Tailwind and Node.js).
+
+Link: https://byte-market-ten.vercel.app/
 
 ## Features
 
-- Hero
-- Filter
-- Product Listing
-- Product View
-- Cart View
-- Theme
+* **Complete Cart Architecture:** Powered by Redux Toolkit with persistent state handling via Browser LocalStorage.
+* **Global Theme Engine:** Custom-engineered `useTheme` React hook managing theme switching seamlessly synchronized with Tailwind CSS configuration layers.
+* **Dynamic Product Database:** Relational product grid sourcing custom data rows straight from a remote PostgreSQL instance.
+* **Component-Driven UI:** Highly modular components featuring category filters, real-time product item sheets, and contextual Toast alerts.
+* **Decoupled Deployment:** Client layer deployed continuously on Vercel with server controllers routed on Render.
 
-Link: https://byte-market-ten.vercel.app/
+## Tech Stack & Architecture
+
+### Frontend
+* **React** (Functional Hooks & View Routing)
+* **Redux Toolkit** (Global Store, Cart Management, Theme Configuration)
+* **Tailwind CSS** (Layout and Fluid theme transitions)
+
+### Backend & Database
+* **Node.js & Express** (REST API Routings & Controllers)
+* **PostgreSQL** (Relational Database Schemas & Value Enums)

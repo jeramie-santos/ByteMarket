@@ -8,13 +8,9 @@ export const useTheme = () => {
         const root = window.document.documentElement;
 
         if (theme == "dark") {
-            console.log(theme);
             root.classList.add("dark");
-            console.log("added");
         } else {
-            console.log(theme);
             root.classList.remove("dark");
-            console.log("removed");
         }
     }, [theme])
 
