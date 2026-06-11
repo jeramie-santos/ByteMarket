@@ -6,7 +6,6 @@ Link: https://byte-market-ten.vercel.app/
 
 ## Features
 
-* **Complete Cart Architecture:** Powered by Redux Toolkit with persistent state handling via Browser LocalStorage.
 * **Global Theme Engine:** Custom-engineered `useTheme` React hook managing theme switching seamlessly synchronized with Tailwind CSS configuration layers.
 * **Dynamic Product Database:** Relational product grid sourcing custom data rows straight from a remote PostgreSQL instance.
 * **Component-Driven UI:** Highly modular components featuring category filters, real-time product item sheets, and contextual Toast alerts.
