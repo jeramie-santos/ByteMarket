@@ -8,6 +8,7 @@ import CartView from "./features/cart/CartView"
 import ToastContainer from "./features/toasts/ToastContainer"
 import Filter from "./features/filters/Filter"
 import { useTheme } from "./features/theme/useTheme"
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const App = () => {
 
