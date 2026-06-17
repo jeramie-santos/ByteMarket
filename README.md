@@ -10,6 +10,7 @@ Link: https://byte-market-ten.vercel.app/
 * **Dynamic Product Database:** Relational product grid sourcing custom data rows straight from a remote PostgreSQL instance.
 * **Component-Driven UI:** Highly modular components featuring category filters, real-time product item sheets, and contextual Toast alerts.
 * **Decoupled Deployment:** Client layer deployed continuously on Vercel with server controllers routed on Render.
+* **Optimized cloud deployment:** Implementing an external cron-job pinging strategy to bypass platform-induced container hibernation, reducing initial user cold-start. 
 
 ## Tech Stack & Architecture
 
@@ -20,4 +21,4 @@ Link: https://byte-market-ten.vercel.app/
 
 ### Backend & Database
 * **Node.js & Express** (REST API Routings & Controllers)
-* **PostgreSQL** (Relational Database Schemas & Value Enums)
+* **PostgreSQL** (Relational Database Schema & Foreign Key Constraints)

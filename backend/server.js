@@ -9,6 +9,10 @@ app.use(express());
 
 app.use('/', productRoutes);
 
+app.get('/ping', (req, res) => {
+  res.status(200).send('Server is awake!');
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
