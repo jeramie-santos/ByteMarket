@@ -11,6 +11,7 @@ Link: https://byte-market-ten.vercel.app/
 * **Component-Driven UI:** Highly modular components featuring category filters, real-time product item sheets, and contextual Toast alerts.
 * **Decoupled Deployment:** Client layer deployed continuously on Vercel with server controllers routed on Render.
 * **Optimized cloud deployment:** Implementing an external cron-job pinging strategy to bypass platform-induced container hibernation, reducing initial user cold-start. 
+* **Skeleton Loading UI:** Integrated skeleton placeholders across the app to create a smooth, modern loading experience while data fetches from the backend.
 
 ## Tech Stack & Architecture
 
