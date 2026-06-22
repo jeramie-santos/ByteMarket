@@ -33,12 +33,12 @@ const ProductDetail = () => {
     <div className="flex flex-col gap-4">
       <button onClick={() => navigate(-1)} className="text-(--color-text-muted) self-start py-2 px-4 rounded-md hover:cursor-pointer">&larr; Back to Shop</button>
       <SkeletonTheme baseColor="var(--color-border-subtle)" highlightColor="var(--color-canvas)" >
-        <div className="flex flex-col bg-(--color-surface) border border-(--color-border-subtle) gap-4 p-4 rounded-xl shadow-2xl md:flex-row md:p-5 lg:p-6">
-          <div className="flex-1 w-full h-48 flex items-center justify-center  rounded-lg p-4">
+        <div className="flex flex-col bg-(--color-surface) border border-(--color-border-subtle) gap-6 p-4 rounded-xl shadow-2xl md:flex-row md:items-center md:p-5 lg:p-6">
+          <div className="flex-1 w-full flex items-center justify-center  rounded-lg p-4">
               {loading ?
                 <Skeleton height={200} width={200}/>
                 :
-                <img src={image_url} alt={title} className="max-w-full max-h-87 object-contain"/>
+                <img src={image_url} alt={title} className="w-full max-w-md max-h-80 object-contain"/>
               }
           </div>
           <div className="flex-1 flex flex-col gap-2">
