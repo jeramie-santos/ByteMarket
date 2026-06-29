@@ -4,6 +4,16 @@ This is a personal project and not an actual e-commerce store. It is built using
 
 Link: https://byte-market-ten.vercel.app/
 
+## Interface Preview
+
+| Homepage View (Light Mode) | Product Catalogue (Dark Mode) |
+| :---: | :---: |
+| ![ByteMarket Desktop Preview 1](./assets/Byte-Market-Home-1.png) | ![ByteMarket Desktop Preview 2](./assets/Byte-Market-Home-2.png) |
+
+| Cart | Walkthrough | 
+| :---: | :---: |
+| ![ByteMarket Desktop Preview 3](./assets/Byte-Market-Home-3.png) | ![Walkthough](./assets/ByteMarket-Gif.gif)
+
 ## Features
 
 * **Global Theme Engine:** Custom-engineered `useTheme` React hook managing theme switching seamlessly synchronized with Tailwind CSS configuration layers.
